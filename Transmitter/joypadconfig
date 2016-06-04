@@ -1,0 +1,20 @@
+Primary NARA control
+analogX	Left analog X axis	3	SLIDER	x	0	1.0	0.0
+analogY	Left analog Y axis	3	SLIDER	y	0	1.0	0.0
+rAnalogX	Right Analog X axis	3	SLIDER	rx	0	1.0	0.0
+rAnalogYaxis	Right Analog Y Axis	3	SLIDER	ry	0	1.0	0.0
+leftTrigger	Left Analog Trigger	3	SLIDER	z	0	1.0	0.0
+rightTrigger	Right Analog Trigger	3	SLIDER	rz	0	1.0	0.0
+dPadUp	directional pad up	1	BUTTON	11	0	0.0	0.0
+dPadDown	directional pad down	1	BUTTON	12	0	0.0	0.0
+dPadLeft	directional pad left	1	BUTTON	13	0	0.0	0.0
+dPadRight	directional pad right	1	BUTTON	14	0	0.0	0.0
+hamBtn	Hamburger button (R Center)	1	BUTTON	8	0	0.0	0.0
+selectBtn	Select Button (L Center)	1	BUTTON	9	0	0.0	0.0
+leftBtn	Left shoulder button	1	BUTTON	4	0	0.0	0.0
+rightBtn	Right shoulder button	1	BUTTON	5	0	0.0	0.0
+xboxBtn	Center Xbox button	1	BUTTON	10	0	0.0	0.0
+aBtn	A button	1	BUTTON	0	0	0.0	0.0
+bBtn	B Button	1	BUTTON	1	0	0.0	0.0
+xBtn	X button	1	BUTTON	2	0	0.0	0.0
+yBtn	Y button	1	BUTTON	3	0	0.0	0.0
