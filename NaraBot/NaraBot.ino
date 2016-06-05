@@ -1,19 +1,21 @@
-  /*
-   * N.A.R.A.
-   * This file is the primary software for the Arduino controlling the robot. 
-   */
+/*
+ N.A.R.A.
+ This file is the primary software for the Arduino controlling the robot. 
 /*-------------------PINOUTS-------------------------------*/
 /*
-Required connections between Arduino and qik 2s12v10:
+                       Xbee
+                 ------------------
+                     D0 - RX
+                     D1 - TX
 
-      Arduino   qik 2s12v10
----------------------------
-          GND - GND
-Digital Pin 2 - TX
-Digital Pin 3 - RX
-Digital Pin 4 - RESET
-
+                   Qik 2s12v10
 DO NOT connect the 5V output on the Arduino to the 5V output on the qik 2s12v10!
+            ---------------------------
+                    GND - GND
+              Digital Pin 2 - TX
+              Digital Pin 3 - RX
+              Digital Pin 4 - RESET
+
 */
 /*-------------------END PINOUTS-------------------------------*/
   
@@ -56,6 +58,13 @@ void loop(){
           //There are two different channels on the Qik12v10, M0 and M1. This assumed 0 is left, and 1 is right.
           qik.setM0Speed(FSpeedL);
           qik.setM1Speed(FSpeedR);
+          /*
+          Future use for OSD
+          Serial.print("M1 current: ");
+          Serial.println(qik.getM0CurrentMilliamps());
+          Serial.print("M1 current: ");
+          Serial.println(qik.getM0CurrentMilliamps());
+          */
        }
      }
     }
