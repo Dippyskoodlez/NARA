@@ -1,8 +1,14 @@
 /*
  N.A.R.A.
- This file is the primary software for the Arduino controlling the robot. 
+ This file is the primary software for the Arduino controlling the robot.
+ Multiple serial ports requires either the use of altSoftSerial for an Uno (May have performance issues),
+ or an Arduino Mega/2560 for the multiple serial connections. 
 /*-------------------PINOUTS-------------------------------*/
 /*
+ * 
+ * Arduino Mega serial pins:
+ * Serial: 0 (RX) and 1 (TX); Serial 1: 19 (RX) and 18 (TX); Serial 2: 17 (RX) and 16 (TX); 
+ * Serial 3: 15 (RX) and 14 (TX). Used to receive (RX) and transmit (TX) TTL serial data.
                        Xbee
                  ------------------
                      D0 - RX
@@ -11,10 +17,11 @@
                    Qik 2s12v10
 DO NOT connect the 5V output on the Arduino to the 5V output on the qik 2s12v10!
             ---------------------------
+                    Arduino - Qik
                     GND - GND
-              Digital Pin 2 - TX
-              Digital Pin 3 - RX
-              Digital Pin 4 - RESET
+              Digital Pin 19 - TX
+              Digital Pin 18 - RX
+              Digital Pin 2 - RESET
 
 */
 /*-------------------END PINOUTS-------------------------------*/
@@ -22,8 +29,8 @@ DO NOT connect the 5V output on the Arduino to the 5V output on the qik 2s12v10!
 #include <SoftwareSerial.h>
 #include <PololuQik.h>
 
-//Serial connections on pins 2,3,4
-PololuQik2s12v10 qik(2, 3, 4);
+//Serial connections on pins 19 and 18
+PololuQik2s12v10 qik(19, 18, 2);
 
   int rcvSpeedL = 0; //0-127
   int rcvSpeedR = 0;
@@ -31,8 +38,11 @@ PololuQik2s12v10 qik(2, 3, 4);
  
  //-------------------------------------------------------// 
 void  setup(){
+
+  //Serial is for xbee communication and serial1 is for Qik communication.
+  Serial.begin(9600);
   Serial.println("Welcome to N.A.R.A.");
-  Serial.begin(115200);
+  Serial1.begin(115200);
   Serial.println("qik 2s12v10 dual serial motor controller");
   
   qik.init();
@@ -45,8 +55,8 @@ void  setup(){
 void loop(){ 
 
   //Read the incoming command, 1 byte, into memory to use as a command.
-  rcvSpeedL = Serial.read();
-  rcvSpeedR = Serial.read();
+  rcvSpeedL = Serial1.read();
+  rcvSpeedR = Serial1.read();
 
 //Verify valid direction and min/max speed recieved.
 //Min and max values for the Qik 12v10 is -127 to 127.
@@ -68,4 +78,3 @@ void loop(){
        }
      }
     }
-
