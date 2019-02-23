@@ -1,6 +1,5 @@
 # Nara-Bot
 
-========
 An Arduino controlled Robot. Primary implementation is a computer host and Xbox One controller utilizing a Processing sketch for communication via Xbee to the remote Arduino driving a Pololu Qik 12v10 motor driver.
 
 * These sketches are designed for an Arduino Mega 2560. *
