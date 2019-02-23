@@ -3,7 +3,7 @@
  * This is the Arduino based control pad sketch designed for use with an Arduino Nano 
  * and accompanying joysticks/hardware.
  * 
- * Created by Scott Billeg, ToastyCat.tech
+ * Created by Scott Billeg
  * 
 */
 
