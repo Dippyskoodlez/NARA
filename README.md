@@ -2,7 +2,7 @@ Nara-Bot
 ========
 An Arduino controlled Robot. Primary implementation is a computer host and Xbox One controller utilizing a Processing sketch for communication via Xbee to the remote Arduino driving a Pololu Qik 12v10 motor driver.
 
-*These sketches are designed for an Arduino Mega 2560. Sketches have currently only been tested on Processing 3.11/Arduino 15, OS X 10.11.5 (15F34)*
+* These sketches are designed for an Arduino Mega 2560. *
 
 ###### Software Required:
 * Arduino IDE/Compatible
@@ -12,8 +12,8 @@ An Arduino controlled Robot. Primary implementation is a computer host and Xbox 
 * [Pololu Qik library](https://github.com/pololu/qik-arduino)
 
 ######Processing: 
-* Game Control Plus
-* G4P
+* [Game Control Plus](http://lagers.org.uk/gamecontrol/)
+* [G4P](http://www.lagers.org.uk/g4p/)
 
 ####Files included:
 * Readme.md (You're reading it!)
